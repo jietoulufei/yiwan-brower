@@ -7,6 +7,9 @@
       name="viewport"
       content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0"
     />
+    <!-- 华为自带浏览器（内核为腾讯X5）fixed底部定位被挡住，解决办法 强制全屏以及跟随浏览器设置【默认】  -->
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>
       <%= htmlWebpackPlugin.options.isProd?"" :"开发模式：" %>一万小时
@@ -35,8 +38,7 @@
         正在加载...请耐心等待
       </div>
     </div>
-    <div id="app">
-    </div>
+    <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
