@@ -11,7 +11,7 @@
     <title>
       <%= htmlWebpackPlugin.options.isProd?"" :"开发模式：" %>一万小时
     </title>
-    <link rel="stylesheet" href="/index-loading.css">
+    <link rel="stylesheet" href="/index-loading.css" />
     <!-- 开发模式利用htmlWebpackPlugin隐藏cdn，不然会报错 -->
     <% if(htmlWebpackPlugin.options.isProd) { %>
     <link
@@ -35,7 +35,8 @@
         正在加载...请耐心等待
       </div>
     </div>
-    <div id="app"></div>
+    <div id="app">
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
