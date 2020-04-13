@@ -44,13 +44,13 @@ export default {
           });
           break;
         case "close":
-          var token = localStorage.getItem("yiwan-token");
+          var token = localStorage.getItem("yiwan-pc-token");
           logout(token).then(response => {
             const { data } = response;
             if (data.flag) {
               //退出成功，清除localStorage
-              localStorage.removeItem("yiwan-token");
-              localStorage.removeItem("yiwan-userinfo");
+              localStorage.removeItem("yiwan-pc-token");
+              localStorage.removeItem("yiwan-pc-userinfo");
               this.$router.push("/login");
             } else {
               this.$message({

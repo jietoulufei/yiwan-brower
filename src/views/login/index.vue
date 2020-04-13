@@ -91,11 +91,11 @@ export default {
             if (data.flag) {
               //验证成功，通过token获取具体用户信息
               getUserInfo(data.data.token).then(response => {
-                console.log("token-userinfo", response);
+                console.log("token-pc-userinfo", response);
                 //1.保存 token验证 和 用户信息
-                localStorage.setItem("yiwan-token", data.data.token);
+                localStorage.setItem("yiwan-pc-token", data.data.token);
                 localStorage.setItem(
-                  "yiwan-userinfo",
+                  "yiwan-pc-userinfo",
                   JSON.stringify(response.data.data)
                 );
                 this.$message({

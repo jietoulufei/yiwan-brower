@@ -30,7 +30,7 @@ import { getUserInfo } from "@/api/login";
 
 router.beforeEach((to, from, next) => {
   // 1. 获取token
-  var token = localStorage.getItem("yiwan-token");
+  var token = localStorage.getItem("yiwan-pc-token");
   console.log("token", token);
 
   if (!token) {
@@ -49,7 +49,7 @@ router.beforeEach((to, from, next) => {
       next();
     } else {
       // 1.2.2 请求路由非登录页面，先在本地查看是否有用户信息，
-      var userInfo = localStorage.getItem("yiwan-user");
+      var userInfo = localStorage.getItem("yiwan-pc-user");
       console.log("userInfo", userInfo);
       if (userInfo) {
         // 本地获取到，则直接让它去目标路由
@@ -62,7 +62,7 @@ router.beforeEach((to, from, next) => {
           //如果获取到用户信息，则进行非登录页面，否则回到登录页面
           //保存到本地
           if (data.flag) {
-            localStorage.setItem("yiwan-user", JSON.stringify(data));
+            localStorage.setItem("yiwan-pc-user", JSON.stringify(data));
             next();
           } else {
             next({ path: "/login" });
