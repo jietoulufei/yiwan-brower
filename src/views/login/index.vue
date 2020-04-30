@@ -35,18 +35,18 @@ export default {
         username: [
           { required: true, message: "账号不能为空", trigger: "blur" },
           {
-            min: 10,
+            min: 5,
             max: 20,
-            message: "长度在 10 到 20 个字符",
+            message: "长度在 5 到 20 个字符",
             trigger: "blur"
           }
         ],
         password: [
           { required: true, message: "账号不能为空", trigger: "blur" },
           {
-            min: 10,
+            min: 5,
             max: 20,
-            message: "长度在 10 到 20 个字符",
+            message: "长度在 5 到 20 个字符",
             trigger: "blur"
           }
         ]
@@ -78,6 +78,7 @@ export default {
         id:1,
         "name":"朱帆",
         "roles":["manager"]  //角色
+        "time":"xxxx"  //时间戳 验证超时登录
       }
     }
     */
@@ -105,6 +106,12 @@ export default {
                 });
                 //跳转主页
                 this.$router.push("/");
+              });
+            } else {
+              this.$message({
+                message: data.message,
+                type: "warning",
+                duration: 1500
               });
             }
           });
